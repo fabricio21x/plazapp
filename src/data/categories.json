@@ -1,0 +1,35 @@
+[
+	{
+		"key":1,
+		"name":"Deportes",
+		"logo":"bicycle"
+	},{
+		"key":2,
+		"name":"Restaurant",
+		"logo":"wine"
+	},
+	{
+		"key":3,
+		"name":"Ropa",
+		"logo":"color-filter"
+	},
+	{
+		"key":4,
+		"name":"Cines",
+		"logo":"film"
+	},
+	{
+		"key":5,
+		"name":"Musica",
+		"logo":"play"
+	},
+	{
+		"key":6,
+		"name":"Hogar",
+		"logo":"home"
+	},{
+		"key":7,
+		"name":"Construccion",
+		"logo":"settings"
+	}
+]

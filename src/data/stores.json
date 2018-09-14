@@ -1,0 +1,51 @@
+[
+	{
+		"key":1,
+		"name":"Tienda 1",
+		"logo":"http://marketing.es/wp-content/uploads/2010/10/starbucks-logo.png"
+	},{
+		"key":2,
+		"name":"Falabella",
+		"logo":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Falabella_Icono.svg/161px-Falabella_Icono.svg.png"
+	},
+	{
+		"key":3,
+		"name":"Wong",
+		"logo":"https://pbs.twimg.com/profile_images/885519548543356928/ScSH3DLk_400x400.jpg"
+	},
+	{
+		"key":4,
+		"name":"Cineplanet",
+		"logo":"http://pbs.twimg.com/profile_images/926104581951672320/zC5JRK_L_400x400.jpg"
+	},
+	{
+		"key":5,
+		"name":"Marathon Sports",
+		"logo":"https://pbs.twimg.com/profile_images/446410364373053440/9VnoaQdm_400x400.png"
+	},
+	{
+		"key":6,
+		"name":"Tienda 6",
+		"logo":"http://marketing.es/wp-content/uploads/2010/10/starbucks-logo.png"
+	},{
+		"key":7,
+		"name":"Tienda 7",
+		"logo":"http://marketing.es/wp-content/uploads/2010/10/starbucks-logo.png"
+	},
+	{
+		"key":8,
+		"name":"Tienda 8",
+		"logo":"http://marketing.es/wp-content/uploads/2010/10/starbucks-logo.png"
+	},
+	{
+		"key":9,
+		"name":"Tienda 9",
+		"logo":"http://marketing.es/wp-content/uploads/2010/10/starbucks-logo.png"
+	},
+	{
+		"key":10,
+		"name":"Tienda 10",
+		"logo":"http://marketing.es/wp-content/uploads/2010/10/starbucks-logo.png"
+	}
+
+]

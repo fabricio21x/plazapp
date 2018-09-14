@@ -1,0 +1,304 @@
+﻿import React, { Component } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  Image,
+  TouchableWithoutFeedback,
+  Alert
+} from 'react-native';
+import { Icon, Left, Right, Card, CardItem } from 'native-base'
+import { connect } from 'react-redux';
+import { loadPreferencesCat } from '../../actions/preferencesCateg';
+import { loadProductsByStoreStoreCategories } from '../../actions/products';
+import { getUserToken } from '../../utils/storage';                                                                                                                 
+
+let beforeFirstRender = true;
+let myProducts = [];
+
+class List extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pressedHeart: false,
+      productIds: [],
+      loading: 'initial',
+      indexStoreCategory: [],
+      myProductsList: [],
+      semaphoreA: false,
+    };
+  }
+
+  loadFavorites() {
+    var request = new XMLHttpRequest();
+    var changeState = this.setState.bind(this);
+    request.open('GET', 'http://200.16.7.150:8083/api/v1/products/favorites');
+    getUserToken().then((token) => {          
+          request.setRequestHeader('Authorization', token);
+          request.setRequestHeader('Content-Type', 'application/json');
+          request.setRequestHeader('Accept', 'application/json');
+
+          request.onreadystatechange = function () {
+            if (this.readyState === 4) {
+
+              var requestResponse = JSON.parse(this.responseText);
+              if ('error' in requestResponse) {
+                Alert.alert(this.responseText);  
+              } else {
+                try{
+                  var newArr = [];
+                  newArr = requestResponse.products.map(prod => prod.id);
+                  changeState({
+                    productIds: newArr,
+                  },() => {
+                    return;
+                  })  
+                }catch(err){
+                  return;
+                }
+              }
+            }
+          };
+          request.send();
+      });
+    }
+  
+
+  saveFavorites(item, op) {
+      var request = new XMLHttpRequest();
+      var post_url = ' ';
+      if (op == 'like') {
+        post_url = 'http://200.16.7.150:8083/api/v1/products/like';
+      } else {
+        post_url = 'http://200.16.7.150:8083/api/v1/products/dislike';
+      }
+      request.open('POST', post_url);
+      var userToken = '';
+      getUserToken().then((token) => {
+          userToken = token;
+          request.setRequestHeader('Authorization', userToken);
+          request.setRequestHeader('Content-Type', 'application/json');
+          request.setRequestHeader('Accept', 'application/json');
+
+          request.onreadystatechange = function () {
+            if (this.readyState === 4) {
+            }
+          };
+
+          var body = {};
+          var sub_body = {};
+          sub_body["product_id"] = parseInt(item.item.id);
+          body["favorite_product"] = sub_body;
+          request.send(JSON.stringify(body));
+            });
+  }
+
+
+  onPressHearts(item) {
+    const itemId = item.item.id;
+    var op = ' ';
+    var newArr = this.state.productIds.slice(); // obtainning new clone of list
+    if (this.state.productIds.includes(itemId)){
+      op = 'dislike';
+      newArr = newArr.filter(item => item !== itemId)
+    } else {
+      op = 'like';
+      newArr.push(itemId);
+    }
+    this.saveFavorites(item, op);
+    this.setState({
+        heartPressed: this.state.heartPressed ? false : true,
+        productIds: newArr,
+      });
+  }
+
+
+  deepCopy(object) {
+    if (object !== undefined && object !== null) {
+      return JSON.parse(JSON.stringify(object));
+    }
+    return null;
+  }
+
+  componentWillMount() {
+    this.loadFavorites();
+  }
+
+
+  renderProducts(myItem) {
+    const { navigate } = this.props.navigation;
+    return (
+      <View style={myStyles.itemContainer}>
+        <Left style={{ marginLeft: 5 }}>
+            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ProductDetail', { item: myItem })}>
+              <Image style={myStyles.image} source={{ uri: myItem.image }} />
+            </TouchableWithoutFeedback>
+        </Left>
+        <Left >
+          <Text style={myStyles.description} >{myItem.name}</Text>
+          <TouchableWithoutFeedback onPress={() => this.onPressHearts({ item: myItem })}>
+            < Icon type='MaterialCommunityIcons' name={(this.state.productIds.includes(myItem.id)) ? "heart": "heart-outline"} size={30} style={(this.state.productIds.includes(myItem.id)) ? myStyles.favourite : myStyles.noFavourite} />
+          </TouchableWithoutFeedback>
+          </Left>
+      </View>
+    );
+  }
+
+
+  renderCategoryStore(itemCategory) {
+    console.log('POR LO MENOS LLEGA HASTA AQUI??');
+    return (
+    <View>
+      <Text style={myStyles.text}> {itemCategory.name} </Text>
+        <FlatList
+          horizontal
+          ItemSeparatorComponent={() => (
+            <View style={{ width: 5 }} />
+            )} /* Entre cada imagen existirá un espacio de 5 mm*/
+          renderItem={({ item }) => this.renderProducts(item)}     /* Cada elemento del flatlist es un item */
+          data={this.state.myProductsList[itemCategory.position].products}
+          extraData={this.state.productIds}
+      />
+    </View>
+    );
+  }
+
+  render() {
+    const { prefCategories } = this.props;
+    console.log('INICIO');
+    console.log(myProducts);
+    if ( this.state.loading === 'initial') {
+      var indexes = [];
+      var indice = 0;
+      for (let key in prefCategories) {
+        var aux = { id: prefCategories[key].id, name: prefCategories[key].name, position: indice };
+        indexes.push(aux);
+        indice++;
+      }
+
+      if (indexes.length > 0) {
+        this.setState({ 
+          loading: 'sendRequests',
+          indexStoreCategory: indexes 
+        });
+      }
+    }
+
+    if (this.state.loading === 'sendRequests') {   
+      this.setState({ loading: 'loadingProducts' });  // Con esto evitamos que ingrese al FOR mas de 3 veces  
+      for (let i = 0; i < this.state.indexStoreCategory.length; i++) {
+        this.props.dispatch(loadProductsByStoreStoreCategories(this.state.indexStoreCategory[i].id));
+      }
+    }
+ 
+    if (this.state.loading === 'loadingProducts') {  // Como ya se envió los 3 request esperamos a que devuelvan productos
+      console.log('TERMINO UN REQUEST');
+      console.log(this.props);
+      var infoProducts = this.props.products.products;
+      if (infoProducts.products) {                      // Si el request ya me devolvió productos, lo proceso
+        console.log(infoProducts);
+        var auxP = [];
+        auxP = this.deepCopy(infoProducts);
+        console.log(auxP);
+        myProducts.push(auxP);
+        console.log(myProducts);
+      }
+      console.log('ghfhgdhgjjhjhbhg');
+      console.log(myProducts);
+      console.log(this.state.indexStoreCategory);
+    
+      if (myProducts.length === this.state.indexStoreCategory.length) {    // Ya tenemos todas las listas completas; asi que las "ordenamos"
+        var productsAux = [];
+        for (let i = 0; i < this.state.indexStoreCategory.length; i++) {
+          var found = false;
+          var j = 0;
+          while (!found) {
+            if (myProducts[j].idStoreCategory === this.state.indexStoreCategory[i].id) {
+              productsAux.push(myProducts[j].products);
+              found = true;
+            }
+            j++; 
+          }
+        }  
+
+        this.setState({ 
+          loading: 'finishProducts',
+          myProductsList: productsAux });
+      }
+    }
+
+    if (this.state.loading === 'finishProducts') {
+      console.log('FINISH');
+      console.log(this.state.myProductsList);
+      console.log(this.state.indexStoreCategory);
+      //myProducts = [];        // 
+      return (
+        <View style={{ flex: 1 }}>
+          <FlatList
+          renderItem={({ item }) => this.renderCategoryStore(item)}
+          data={this.state.indexStoreCategory}
+          extraData={this.state.productIds}
+          />
+        </View>
+      );
+    }
+    return null;
+  }
+}
+    
+
+const myStyles = StyleSheet.create({
+  text: {
+    color: '#000000',
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+  description: {
+    color: '#000000',
+    fontSize: 15,
+    marginTop: 3,
+    marginBottom: 3,
+    textAlign: 'left'
+  },
+  image: {
+    width: 120,
+    height: undefined,
+    flex: 1,
+    alignSelf: 'center',
+    marginRight: 20
+  },
+  itemContainer: {
+    flex: 1,
+    width: 150,
+    height: 165,
+    borderWidth: 1,
+    borderRadius: 8,
+    borderColor: 'gray',
+    elevation: 1,
+    marginRight: 5,
+    marginTop: 10,
+    backgroundColor: 'white'
+  },
+  noFavourite: {
+    position: 'absolute',
+    right: 1,
+    bottom: 1,
+    color:'gray'
+  },
+  favourite:{ 
+    color: 'red', 
+    position: 'absolute',
+    right: 1, 
+    bottom: 1
+  }
+
+});
+
+const mapStateToProps = state => {
+  return { products: state.productsReducer };
+};
+
+export default connect(mapStateToProps)(List);
+

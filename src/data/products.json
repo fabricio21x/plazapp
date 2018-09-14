@@ -1,0 +1,233 @@
+[
+        {
+            "id": 1,
+            "name": "Zapatillas",
+            "image": "https://www.ripley.com.pe/wcsstore/ripleype_CAT_AS/Attachment/WOP_5/2084194369950/2084194369950-2.jpg",
+            "price": "339",
+            "store": {
+                "id": 2,
+                "name": "QuickSilver",
+                "description": "Quiksilver combina la funcionalidad, fit, arte y moda para desarrollar boardshorts y ropa para los amantes de la montaña y el mar en todo el mundo. En Quiksilver siempre estamos dedicados a nuestras raíces del surf. Quiksilver también ha sido reconocida como marca Premium en estilo de vida y cultura de los jóvenes dentro del mercado de los deportes de acción. Quiksilver diseña y produce una línea completa de ropa de estilo de vida, wetsuits, ropa de nieve, calzado, boardshorts, sandalias y más.",
+                "webpage": "http://www.quiksilver.com",
+                "contact_name": null,
+                "phone_number": "99370555",
+                "logo": "https://s3.us-east-2.amazonaws.com/plazapi/stores/logos/000/000/002/original/logo_quicksilver.jpg?1526667911",
+                "banner": "https://s3.us-east-2.amazonaws.com/plazapi/stores/banners/000/000/002/original/banner_quiksilver.jpg?1526667911"
+            },
+            "brand": {
+                "id": 1,
+                "name": "Nike",
+                "description": "Es una marca de ..",
+                "corporation_name": "Es una marca que pertenece a .."
+            },
+            "product_category": {
+                "id": 1,
+                "name": "Deportes",
+                "description": "Es una categoria de .."
+            },
+            "technical_specification": {
+                "description": "Es una zapatilla de ...",
+                "weight": "1",
+                "length": "1",
+                "height": "1"
+            }
+        },
+        {
+            "id": 2,
+            "name": "Buzo",
+            "image": "http://www.adidas.pe/dis/dw/image/v2/aaqx_prd/on/demandware.static/-/Sites-adidas-products/default/dw4c5819c3/zoom/CF7361_01_laydown.jpg?sw=230&strip=false",
+            "price": "339",
+            "store": {
+                "id": 2,
+                "name": "QuickSilver",
+                "description": "Quiksilver combina la funcionalidad, fit, arte y moda para desarrollar boardshorts y ropa para los amantes de la montaña y el mar en todo el mundo. En Quiksilver siempre estamos dedicados a nuestras raíces del surf. Quiksilver también ha sido reconocida como marca Premium en estilo de vida y cultura de los jóvenes dentro del mercado de los deportes de acción. Quiksilver diseña y produce una línea completa de ropa de estilo de vida, wetsuits, ropa de nieve, calzado, boardshorts, sandalias y más.",
+                "webpage": "http://www.quiksilver.com",
+                "contact_name": null,
+                "phone_number": "99370555",
+                "logo": "https://s3.us-east-2.amazonaws.com/plazapi/stores/logos/000/000/002/original/logo_quicksilver.jpg?1526667911",
+                "banner": "https://s3.us-east-2.amazonaws.com/plazapi/stores/banners/000/000/002/original/banner_quiksilver.jpg?1526667911"
+            },
+            "brand": {
+                "id": 1,
+                "name": "Nike",
+                "description": "Es una marca de ..",
+                "corporation_name": "Es una marca que pertenece a .."
+            },
+            "product_category": {
+                "id": 1,
+                "name": "Deportes",
+                "description": "Es una categoria de .."
+            },
+            "technical_specification": {
+                "description": "Es buzo para entrenamiento ...",
+                "weight": "1",
+                "length": "1",
+                "height": "1"
+            }
+        },
+        {
+            "id": 3,
+            "name": "SAMSUNG SMART TV UHD 55 55MU6103",
+            "image": "https://www.ripley.com.pe/wcsstore/ripleype_CAT_AS/Attachment/WOP_3/2018188588751/2018188588751_2.jpg",
+            "price": "3999",
+            "store": {
+                "id": 2,
+                "name": "QuickSilver",
+                "description": "Quiksilver combina la funcionalidad, fit, arte y moda para desarrollar boardshorts y ropa para los amantes de la montaña y el mar en todo el mundo. En Quiksilver siempre estamos dedicados a nuestras raíces del surf. Quiksilver también ha sido reconocida como marca Premium en estilo de vida y cultura de los jóvenes dentro del mercado de los deportes de acción. Quiksilver diseña y produce una línea completa de ropa de estilo de vida, wetsuits, ropa de nieve, calzado, boardshorts, sandalias y más.",
+                "webpage": "http://www.quiksilver.com",
+                "contact_name": null,
+                "phone_number": "99370555",
+                "logo": "https://s3.us-east-2.amazonaws.com/plazapi/stores/logos/000/000/002/original/logo_quicksilver.jpg?1526667911",
+                "banner": "https://s3.us-east-2.amazonaws.com/plazapi/stores/banners/000/000/002/original/banner_quiksilver.jpg?1526667911"
+            },
+            "brand": {
+                "id": 1,
+                "name": "Nike",
+                "description": "Es una marca de ..",
+                "corporation_name": "Es una marca que pertenece a .."
+            },
+            "product_category": {
+                "id": 1,
+                "name": "Tecnologia",
+                "description": "Es una categoria de .."
+            },
+            "technical_specification": {
+                "description": "Es televisor Smart TV de 55 pulgadas ...",
+                "weight": "1",
+                "length": "1",
+                "height": "1"
+            }
+        },
+                {
+            "id": 1,
+            "name": "Zapatillas",
+            "image": "https://www.ripley.com.pe/wcsstore/ripleype_CAT_AS/Attachment/WOP_5/2084194369950/2084194369950-2.jpg",
+            "price": "3999",
+            "store": {
+                "id": 2,
+                "name": "QuickSilver",
+                "description": "Quiksilver combina la funcionalidad, fit, arte y moda para desarrollar boardshorts y ropa para los amantes de la montaña y el mar en todo el mundo. En Quiksilver siempre estamos dedicados a nuestras raíces del surf. Quiksilver también ha sido reconocida como marca Premium en estilo de vida y cultura de los jóvenes dentro del mercado de los deportes de acción. Quiksilver diseña y produce una línea completa de ropa de estilo de vida, wetsuits, ropa de nieve, calzado, boardshorts, sandalias y más.",
+                "webpage": "http://www.quiksilver.com",
+                "contact_name": null,
+                "phone_number": "99370555",
+                "logo": "https://s3.us-east-2.amazonaws.com/plazapi/stores/logos/000/000/002/original/logo_quicksilver.jpg?1526667911",
+                "banner": "https://s3.us-east-2.amazonaws.com/plazapi/stores/banners/000/000/002/original/banner_quiksilver.jpg?1526667911"
+            },
+            "brand": {
+                "id": 1,
+                "name": "Nike",
+                "description": "Es una marca de ..",
+                "corporation_name": "Es una marca que pertenece a .."
+            },
+            "product_category": {
+                "id": 1,
+                "name": "Deportes",
+                "description": "Es una categoria de .."
+            },
+            "technical_specification": {
+                "description": "Es una zapatilla de ...",
+                "weight": "1",
+                "length": "1",
+                "height": "1"
+            }
+        },
+        {
+            "id": 2,
+            "name": "Buzo",
+            "image": "http://www.adidas.pe/dis/dw/image/v2/aaqx_prd/on/demandware.static/-/Sites-adidas-products/default/dw4c5819c3/zoom/CF7361_01_laydown.jpg?sw=230&strip=false",
+            "price": "339",
+            "store": {
+                "id": 2,
+                "name": "QuickSilver",
+                "description": "Quiksilver combina la funcionalidad, fit, arte y moda para desarrollar boardshorts y ropa para los amantes de la montaña y el mar en todo el mundo. En Quiksilver siempre estamos dedicados a nuestras raíces del surf. Quiksilver también ha sido reconocida como marca Premium en estilo de vida y cultura de los jóvenes dentro del mercado de los deportes de acción. Quiksilver diseña y produce una línea completa de ropa de estilo de vida, wetsuits, ropa de nieve, calzado, boardshorts, sandalias y más.",
+                "webpage": "http://www.quiksilver.com",
+                "contact_name": null,
+                "phone_number": "99370555",
+                "logo": "https://s3.us-east-2.amazonaws.com/plazapi/stores/logos/000/000/002/original/logo_quicksilver.jpg?1526667911",
+                "banner": "https://s3.us-east-2.amazonaws.com/plazapi/stores/banners/000/000/002/original/banner_quiksilver.jpg?1526667911"
+            },
+            "brand": {
+                "id": 1,
+                "name": "Nike",
+                "description": "Es una marca de ..",
+                "corporation_name": "Es una marca que pertenece a .."
+            },
+            "product_category": {
+                "id": 1,
+                "name": "Deportes",
+                "description": "Es una categoria de .."
+            },
+            "technical_specification": {
+                "description": "Es buzo para entrenamiento ...",
+                "weight": "1",
+                "length": "1",
+                "height": "1"
+            }
+        },
+                {
+            "id": 1,
+            "name": "Zapatillas",
+            "image": "http://www.adidas.pe/dis/dw/image/v2/aaqx_prd/on/demandware.static/-/Sites-adidas-products/default/dw4c5819c3/zoom/CF7361_01_laydown.jpg?sw=230&strip=false",
+            "price": "339",
+            "store": {
+                "id": 2,
+                "name": "QuickSilver",
+                "description": "Quiksilver combina la funcionalidad, fit, arte y moda para desarrollar boardshorts y ropa para los amantes de la montaña y el mar en todo el mundo. En Quiksilver siempre estamos dedicados a nuestras raíces del surf. Quiksilver también ha sido reconocida como marca Premium en estilo de vida y cultura de los jóvenes dentro del mercado de los deportes de acción. Quiksilver diseña y produce una línea completa de ropa de estilo de vida, wetsuits, ropa de nieve, calzado, boardshorts, sandalias y más.",
+                "webpage": "http://www.quiksilver.com",
+                "contact_name": null,
+                "phone_number": "99370555",
+                "logo": "https://s3.us-east-2.amazonaws.com/plazapi/stores/logos/000/000/002/original/logo_quicksilver.jpg?1526667911",
+                "banner": "https://s3.us-east-2.amazonaws.com/plazapi/stores/banners/000/000/002/original/banner_quiksilver.jpg?1526667911"
+            },
+            "brand": {
+                "id": 1,
+                "name": "Nike",
+                "description": "Es una marca de ..",
+                "corporation_name": "Es una marca que pertenece a .."
+            },
+            "product_category": {
+                "id": 1,
+                "name": "Deportes",
+                "description": "Es una categoria de .."
+            },
+            "technical_specification": {
+                "description": "Es una zapatilla de ...",
+                "weight": "1",
+                "length": "1",
+                "height": "1"
+            }
+        },
+        {
+            "id": 2,
+            "name": "Buzo",
+            "image": "http://www.adidas.pe/dis/dw/image/v2/aaqx_prd/on/demandware.static/-/Sites-adidas-products/default/dw4c5819c3/zoom/CF7361_01_laydown.jpg?sw=230&strip=false",
+            "price": "339",
+            "store": {
+                "id": 2,
+                "name": "QuickSilver",
+                "description": "Quiksilver combina la funcionalidad, fit, arte y moda para desarrollar boardshorts y ropa para los amantes de la montaña y el mar en todo el mundo. En Quiksilver siempre estamos dedicados a nuestras raíces del surf. Quiksilver también ha sido reconocida como marca Premium en estilo de vida y cultura de los jóvenes dentro del mercado de los deportes de acción. Quiksilver diseña y produce una línea completa de ropa de estilo de vida, wetsuits, ropa de nieve, calzado, boardshorts, sandalias y más.",
+                "webpage": "http://www.quiksilver.com",
+                "contact_name": null,
+                "phone_number": "99370555",
+                "logo": "https://s3.us-east-2.amazonaws.com/plazapi/stores/logos/000/000/002/original/logo_quicksilver.jpg?1526667911",
+                "banner": "https://s3.us-east-2.amazonaws.com/plazapi/stores/banners/000/000/002/original/banner_quiksilver.jpg?1526667911"
+            },
+            "brand": {
+                "id": 1,
+                "name": "Nike",
+                "description": "Es una marca de ..",
+                "corporation_name": "Es una marca que pertenece a .."
+            },
+            "product_category": {
+                "id": 1,
+                "name": "Deportes",
+                "description": "Es una categoria de .."
+            },
+            "technical_specification": {
+                "description": "Es buzo para entrenamiento ...",
+                "weight": "1",
+                "length": "1",
+                "height": "1"
+            }
+        }
+]
